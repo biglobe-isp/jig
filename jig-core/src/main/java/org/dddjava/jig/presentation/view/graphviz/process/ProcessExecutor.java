@@ -38,7 +38,7 @@ public class ProcessExecutor {
                     .start();
 
             // TODO タイムアウト時間を設定可能にする
-            Duration commandTimeout = Duration.ofSeconds(10);
+            Duration commandTimeout = Duration.ofSeconds(120);
 
             Future<String> firstLine = executorService.submit(firstLineReader(process));
             Future<ProcessResult> result = executorService.submit(resultCodeReader(process, commandTimeout));
